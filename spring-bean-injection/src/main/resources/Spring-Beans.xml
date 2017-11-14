@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id = "address" class = "com.baeldung.beans.Address">
+		<property name="lane" value="RRG II"/>
+		<property name="street" value="Aundh-Ravet"/>
+		<property name="city" value="Pune"/>
+		<property name="zip" value="411057"/>
+	</bean>
+	<bean id = "familyDetails" class = "com.baeldung.beans.FamilyDetails">
+		<property name="fatherName" value="John"/>
+		<property name="motherName" value="Mary"/>
+	</bean>
+	<bean id="student" class="com.baeldung.beans.Student">
+		<constructor-arg ref="address" />
+		<property name="familyDetails" ref="familyDetails"/>
+	</bean>
+</beans>
